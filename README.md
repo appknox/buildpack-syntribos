@@ -1,0 +1,5 @@
+# buildpack-syntribos
+
+---
+
+License: MIT
