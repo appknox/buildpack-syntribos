@@ -2,4 +2,6 @@
 
 # (c) 2017 XYSec Labs
 
+set -euo pipefail
 
+exit 0
