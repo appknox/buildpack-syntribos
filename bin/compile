@@ -2,14 +2,15 @@
 
 # (c) 2017 XYSec Labs
 
+set -euo pipefail
+
 indent() {
     sed -u 's/^/       /'
 }
 
 echo '-----> Downloading Syntribos payloads'
+echo $1/syntribos/payloads | indent
 
 PAYLOADS_URL=https://github.com/openstack/syntribos-payloads/archive/master.zip
 
-curl -sSL $PAYLOADS_URL | tar xz -C $BUILD_DIR/syntribos/payloads
-
-echo $BUILD_DIR/syntribos/payloads | indent
+curl -sSL $PAYLOADS_URL | tar xz -C $1/syntribos/payloads
