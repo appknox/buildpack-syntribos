@@ -8,12 +8,12 @@ indent() {
     sed -u 's/^/       /'
 }
 
-echo "-----> Downloading Syntribos payloads"
-
 PAYLOADS_URL=https://github.com/openstack/syntribos-payloads/archive/master.zip
+PAYLOADS_PATH=$1/syntribos/payloads
+
+echo "-----> Downloading Syntribos payloads from $PAYLOADS_URL"
 curl -sSLO $PAYLOADS_URL
 
-echo "-----> Extracting to $1/syntribos/payloads"
-
-mkdir -p $1/syntribos/payloads
-unzip master.zip -d $1/syntribos/payloads
+echo "-----> Extracting to $PAYLOADS_PATH"
+mkdir -p $PAYLOADS_PATH
+unzip master.zip -d $PAYLOADS_PATH

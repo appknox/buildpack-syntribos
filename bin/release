@@ -4,4 +4,8 @@
 
 set -euo pipefail
 
-exit 0
+cat <<EOF
+---
+config_vars:
+
+EOF
