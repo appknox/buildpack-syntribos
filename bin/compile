@@ -13,6 +13,7 @@ echo "-----> Downloading Syntribos payloads"
 PAYLOADS_URL=https://github.com/openstack/syntribos-payloads/archive/master.zip
 curl -sSLO $PAYLOADS_URL
 
-echo "Extracting to $1/syntribos/payloads" | indent
+echo "-----> Extracting to $1/syntribos/payloads"
 
+mkdir -p $1/syntribos/payloads
 unzip master.zip -d $1/syntribos/payloads
