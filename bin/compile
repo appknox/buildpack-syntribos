@@ -14,14 +14,12 @@ CACHE_DIR=$2
 PAYLOADS_URL=https://github.com/openstack/syntribos-payloads/archive/master.zip
 PAYLOADS_PATH=$BUILD_DIR/syntribos/payloads
 
-export PATH="$BUILD_DIR/.apt/usr/local/bin:$PATH"
-
 echo "-----> Installing pip"
 mkdir -p $BUILD_DIR/.apt/usr/local/lib/python2.7/dist-packages/
 curl -sSk https://bootstrap.pypa.io/get-pip.py | python2.7
 
 echo "-----> Installing Syntribos"
-pip install syntribos
+$BUILD_DIR/.apt/usr/local/bin/pip2.7 install syntribos
 
 echo "-----> Downloading Syntribos payloads from $PAYLOADS_URL"
 curl -sSLO $PAYLOADS_URL
