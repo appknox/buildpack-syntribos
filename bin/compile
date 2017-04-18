@@ -20,3 +20,7 @@ curl -sSLO $PAYLOADS_URL
 echo "-----> Extracting payloads to $PAYLOADS_PATH"
 mkdir -p $PAYLOADS_PATH
 unzip master.zip -d $PAYLOADS_PATH
+
+echo "-----> Creating Syntribos config"
+mkdir -p $BUILD_DIR/syntribos
+touch $BUILD_DIR/syntribos/syntribos.conf
